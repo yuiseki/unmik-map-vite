@@ -75,6 +75,34 @@ export const GeoJSONToMarkers: React.FC<{
           zIndex = 110;
         }
 
+        // EU
+        if (
+          (feature.properties &&
+            feature.properties.operator &&
+            feature.properties.operator.includes("EU")) ||
+          (feature.properties &&
+            feature.properties.name &&
+            feature.properties.name.includes("EU"))
+        ) {
+          icon = "🇪🇺";
+          zIndex = 110;
+        }
+
+        // NATO, KFOR
+        if (
+          (feature.properties &&
+            feature.properties.operator &&
+            (feature.properties.operator.includes("NATO") ||
+              feature.properties.operator.includes("KFOR"))) ||
+          (feature.properties &&
+            feature.properties.name &&
+            (feature.properties.name.includes("NATO") ||
+              feature.properties.name.includes("KFOR")))
+        ) {
+          icon = "🟦";
+          zIndex = 110;
+        }
+
         // Road closed
         if (emoji === "🚧") {
           zIndex = 115;

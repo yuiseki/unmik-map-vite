@@ -9,6 +9,9 @@ layers:
   - name: hospital
     way:
       - amenity: hospital
+  - name: police
+    nwr:
+      - amenity: police
   - name: military
     way:
       - landuse: military
@@ -16,6 +19,9 @@ layers:
     nwr:
       - operator: United Nations
       - operator: UNMIK
+      - operator: UNPOL
+      - operator: KFOR
+      - operator: EULEX
   - name: power
     way:
       - power:
